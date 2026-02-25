@@ -1,6 +1,6 @@
 นางสาวจารุวรรณ เค้าเหลือง 683450184-0
 
-# Training Registration System (C#)
+# Training Registration System 
 
 ระบบรับสมัครฝึกอบรม ประกอบด้วย
 - นักศึกษา
@@ -30,6 +30,8 @@ TrainingRegistrationSystem/
 ## classDiagram
 
 classDiagram
+
+%% ===== Abstract Class =====
 class Person {
     <<abstract>>
     -FirstName : string
@@ -40,6 +42,7 @@ class Person {
     +DisplayInfo() void
 }
 
+%% ===== Interfaces =====
 class ITrainable {
     <<interface>>
     +RegisterTraining() void
@@ -51,6 +54,7 @@ class ITrainer {
     +ApproveResult() void
 }
 
+%% ===== Classes =====
 class Student {
     -StudentId : string
     -Major : string
@@ -79,12 +83,13 @@ class GeneralPerson {
 class TrainingSystem {
     -Participants : List~Person~
     -Trainers : List~Person~
-    +AddParticipant(Person p) void
-    +AddTrainer(Person p) void
+    +AddParticipant(p : Person) void
+    +AddTrainer(p : Person) void
     +ShowParticipants() void
     +ShowTrainers() void
 }
 
+%% ===== Relationships =====
 Person <|-- Student
 Person <|-- Teacher
 Person <|-- GeneralPerson
