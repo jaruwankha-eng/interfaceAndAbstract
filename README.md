@@ -29,6 +29,7 @@ TrainingRegistrationSystem/
 
 ## classDiagram
 
+```mermaid
 classDiagram
 
 %% ===== Abstract Class =====
